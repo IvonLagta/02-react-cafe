@@ -35,25 +35,27 @@ function App() {
     : 0;
 
   return (
-    <div className={css.app}>
-      <CafeInfo />
-
-      <VoteOptions
-        onVote={handleVote}
-        onReset={resetVotes}
-        canReset={totalVotes > 0}
-      />
-
-      {totalVotes > 0 ? (
-        <VoteStats
-          votes={votes}
-          totalVotes={totalVotes}
-          positiveRate={positiveRate}
+    <>
+      <div className={css.app}>
+        <CafeInfo />
+  
+        <VoteOptions
+          onVote={handleVote}
+          onReset={resetVotes}
+          canReset={totalVotes > 0}
         />
-      ) : (
-        <Notification />
-      )}
-    </div>
+  
+        {totalVotes > 0 ? (
+          <VoteStats
+            votes={votes}
+            totalVotes={totalVotes}
+            positiveRate={positiveRate}
+          />
+        ) : (
+          <Notification />
+        )}
+      </div>
+  </>>
   );
 }
 
